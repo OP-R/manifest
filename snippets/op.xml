@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="op"
+           fetch="https://github.com/OP-R"
+           revision="r"
+           sync-j="16" />
+
+  <remote name="op-gitlab"
+          fetch="https://gitlab.com/OP-R"
+          revision="r" />
+
+  <remote name="gitlab"
+          fetch="https://gitlab.com" />
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <project path="bionic" name="bionic" remote="op" />
+
+  <!-- build -->
+  <project path="build/make" name="build" remote="op" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="op" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  
+
+  <!-- frameworks -->
+  <project path="frameworks/av" name="frameworks_av" remote="op" />
+  <project path="frameworks/base" name="frameworks_base" remote="op-gitlab" />
+  <project path="frameworks/native" name="frameworks_native" remote="op" />
+
+  <!-- hardware -->
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="op" />
+
+  <!-- system -->
+  <project path="system/bt" name="system_bt" remote="op" />
+  <project path="system/core" name="system_core" remote="op-gitlab" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="op" />
+
+  <project path="vendor/aosp" name="vendor_aosp" remote="op" />
+
+</manifest>
