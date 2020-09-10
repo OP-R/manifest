@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="op"
+          fetch="https://github.com/OP-R"
+          revision="pe-r" />
+
+  <!-- External repos -->
+  <project path="external/motorola/faceunlock" name="external_motorola_faceunlock" remote="op" />
+
+  <!-- General repos -->
+  <project path="crowdin" name="crowdin" remote="op" />
+
+  <!-- Framework repos -->
+  <project path="frameworks/base" name="frameworks_base" remote="op" />
+
+  <!-- Packages repos -->
+  <project path="packages/apps/Recorder" name="packages_apps_Recorder" remote="op" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="op" />
+  <project path="packages/apps/TouchGestures" name="packages_apps_TouchGestures" remote="op" />
+  <project path="packages/apps/Updates" name="packages_apps_Updates" remote="op" />
+  <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="op" />
+  <project path="packages/resources/devicesettings-custom" name="packages_resources_devicesettings-custom" remote="op" />
+  <project path="packages/services/BuiltInPrintService" name="packages_services_BuiltInPrintService" remote="op" />
+
+</manifest>
